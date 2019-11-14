@@ -1,0 +1,49 @@
+﻿using OAuthService.JWT.Helper;
+using System;
+using System.Collections.Generic;
+
+namespace OAuthService.JWT.Models
+{
+    public class TokenRequest
+    {
+        public TokenRequest() { }
+
+        public TokenRequest(TokenProviderOptions options,
+            List<CustomClaim> claims,
+            bool isVerifyPassword) : this(options, claims)
+        {
+            IsVerifyPassword = isVerifyPassword;
+        }
+
+        public TokenRequest(TokenProviderOptions options, List<CustomClaim> claims)
+        {
+            Issuer = options.Issuer;
+            Audience = options.Audience;
+            Claims = claims;
+            Expiration = options.Expiration;
+            SecurityKey = options.SecurityKey;
+            Responses = new Dictionary<string, object>();
+        }
+
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
+        public List<CustomClaim> Claims { get; set; }
+        public TimeSpan Expiration { get; set; } = TimeSpan.FromDays(+30);
+        public double TotalSeconds => Expiration.TotalSeconds;
+        public string SecurityKey { get; set; } = SettingHelper.SecurityKey;
+        public bool IsVerifyPassword { get; set; } = true;
+        public IDictionary<string, object> Responses { get; set; }
+    }
+
+    public class CustomClaim
+    {
+        public CustomClaim(string type, object value)
+        {
+            Type = type;
+            Value = value;
+        }
+
+        public string Type { get; set; }
+        public object Value { get; set; }
+    }
+}
