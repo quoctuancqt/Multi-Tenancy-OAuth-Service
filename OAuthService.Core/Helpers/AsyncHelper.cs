@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OAuthService.Core.Helper
+namespace OAuthService.Core.Helpers
 {
     public class AsyncHelper
     {

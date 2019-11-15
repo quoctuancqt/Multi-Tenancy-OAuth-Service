@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthService.Server", "OAut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthService.Core", "OAuthService.Core\OAuthService.Core.csproj", "{B2038AF6-ACD4-4B22-89F2-65D53F2A49BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthService.TenantFactory", "OAuthService.TenantFactory\OAuthService.TenantFactory.csproj", "{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthService.Domain", "OAuthService.Domain\OAuthService.Domain.csproj", "{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B2038AF6-ACD4-4B22-89F2-65D53F2A49BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2038AF6-ACD4-4B22-89F2-65D53F2A49BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2038AF6-ACD4-4B22-89F2-65D53F2A49BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
