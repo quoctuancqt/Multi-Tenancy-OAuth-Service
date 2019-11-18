@@ -8,7 +8,6 @@ using OAuthService.Server.Services;
 
 namespace OAuthService.Server.Controllers
 {
-    [Route("api/[controller]")]
     public class ClientsController : ApiBase
     {
         private readonly IClientService _clientService;
@@ -23,7 +22,7 @@ namespace OAuthService.Server.Controllers
 
         [HttpPost("")]
         public async Task<IActionResult> Create([FromBody] AddOrEditClientDto dto)
-        { 
+        {
             await _clientService.CreateAsync(dto);
 
             return Success();

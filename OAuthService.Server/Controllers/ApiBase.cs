@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using OAuthService.Core.Helpers;
-using OAuthService.Server.Dto;
 
 namespace OAuthService.Server.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public abstract class ApiBase : ControllerBase

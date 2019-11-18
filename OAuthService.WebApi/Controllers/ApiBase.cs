@@ -8,6 +8,7 @@ using OAuthService.TenantFactory;
 
 namespace OAuthService.WebApi.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public abstract class ApiBase : ControllerBase

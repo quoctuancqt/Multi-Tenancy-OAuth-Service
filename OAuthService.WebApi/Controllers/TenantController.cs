@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace OAuthService.WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class TenantsController : ApiBase
     {
         private readonly ITenantFactory _tenantFactory;

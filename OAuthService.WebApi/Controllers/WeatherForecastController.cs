@@ -7,8 +7,6 @@ using Microsoft.Extensions.Configuration;
 
 namespace OAuthService.WebApi.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
     public class WeatherForecastController : ApiBase
     {
         public WeatherForecastController(IConfiguration configuration, IWebHostEnvironment hostingEnvironment) : base(configuration, hostingEnvironment)

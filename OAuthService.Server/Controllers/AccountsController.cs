@@ -10,7 +10,6 @@ using OAuthService.JWT.Proxy;
 
 namespace OAuthService.Server.Controllers
 {
-    [Route("api/[controller]")]
     public class AccountsController : ApiBase
     {
         private readonly OAuthClient _client;

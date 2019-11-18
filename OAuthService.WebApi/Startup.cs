@@ -34,7 +34,7 @@ namespace OAuthService.WebApi
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
 
             services.AddJWTAddAuthentication(Configuration);
 
