@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthService.Server", "OAut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthService.Core", "OAuthService.Core\OAuthService.Core.csproj", "{B2038AF6-ACD4-4B22-89F2-65D53F2A49BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthService.TenantFactory", "OAuthService.TenantFactory\OAuthService.TenantFactory.csproj", "{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthService.TenantFactory", "OAuthService.TenantFactory\OAuthService.TenantFactory.csproj", "{8DD6A9B3-0A78-42CD-B2A2-B0AD03D72927}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthService.Domain", "OAuthService.Domain\OAuthService.Domain.csproj", "{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthService.Domain", "OAuthService.Domain\OAuthService.Domain.csproj", "{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{69F2DFA0-CBE5-4542-813D-4F08DBB48D89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthService.WebApi", "OAuthService.WebApi\OAuthService.WebApi.csproj", "{DC93DC2F-DBF7-4111-A123-390EBECD8EEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,16 @@ Global
 		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FFE9FB1-2E97-4474-B50E-512F7189AC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC93DC2F-DBF7-4111-A123-390EBECD8EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC93DC2F-DBF7-4111-A123-390EBECD8EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC93DC2F-DBF7-4111-A123-390EBECD8EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC93DC2F-DBF7-4111-A123-390EBECD8EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC93DC2F-DBF7-4111-A123-390EBECD8EEC} = {69F2DFA0-CBE5-4542-813D-4F08DBB48D89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {123A6844-287A-47C7-88FC-294C73F37E4A}

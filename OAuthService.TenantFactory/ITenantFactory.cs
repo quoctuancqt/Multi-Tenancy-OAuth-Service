@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OAuthService.DistributedCache.Models;
+﻿using OAuthService.DistributedCache.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,7 +8,7 @@ namespace OAuthService.TenantFactory
     {
         Task<TenantProfileModel> GetTenantByTenantIdAsync(string id);
 
-        T GetTenantContext<T>(string id) where T : DbContext;
+        T GetTenantContext<T>(string id) where T : DbContextDefault;
 
         IList<string> GetTenantIds();
 

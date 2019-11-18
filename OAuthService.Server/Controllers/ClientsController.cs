@@ -23,14 +23,7 @@ namespace OAuthService.Server.Controllers
 
         [HttpPost("")]
         public async Task<IActionResult> Create([FromBody] AddOrEditClientDto dto)
-        {
-            var validator = CheckValidation(dto);
-
-            if (!validator.IsValid)
-            {
-                return BadRequest(validator.Errors);
-            }
-
+        { 
             await _clientService.CreateAsync(dto);
 
             return Success();
@@ -39,13 +32,6 @@ namespace OAuthService.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] AddOrEditClientDto dto)
         {
-            var validator = CheckValidation(dto);
-
-            if (!validator.IsValid)
-            {
-                return BadRequest(validator.Errors);
-            }
-
             await _clientService.UpdateAsync(id, dto);
 
             return Success();
@@ -56,10 +42,6 @@ namespace OAuthService.Server.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> UpdateCommon(string id, [FromBody] EditClientCommonInfoDto dto)
         {
-            var result = CheckValidation(dto);
-
-            if (!result.IsValid) return BadRequest(result.Errors);
-
             await _clientService.UpdateAsync(id, dto);
 
             return Success();

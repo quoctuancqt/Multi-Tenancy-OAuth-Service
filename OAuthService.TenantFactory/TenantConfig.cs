@@ -6,8 +6,6 @@
 
         public string TenantStorage { get; set; }
 
-        public string ServiceBusHost { get; set; }
-
         public string GetTenantIdBySubDomain(string subDomain)
         {
             return string.Format(Domain, subDomain);

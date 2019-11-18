@@ -77,6 +77,7 @@ namespace OAuthService.Server
             services.AddTransient<SeedSchemes>();
 
             services.AddControllers(options => options.RegisterDateTimeProvider(services))
+                .AddFluentValidation(config => config.RegisterValidatorsFromAssembly(typeof(Startup).Assembly))
                 .AddNewtonsoftJson();
         }
 
@@ -92,9 +93,9 @@ namespace OAuthService.Server
 
             app.UseSwashbuckle(Configuration);
 
-            app.UseJWTBearerToken(Configuration, verifyClient: true);
-
             app.UseRouting();
+
+            app.UseJWTBearerToken(Configuration, verifyClient: true);
 
             app.UseAuthentication();
 

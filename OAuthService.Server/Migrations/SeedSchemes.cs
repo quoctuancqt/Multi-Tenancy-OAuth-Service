@@ -31,7 +31,7 @@ namespace OAuthService.Server
             {
                 ClientId = clientId,
                 ClientName = "Administrator",
-                ClientUri = "http://localhost:9000",
+                ClientUri = "http://localhost:5000",
                 SubDomain = "admin",
                 Enabled = true,
                 ClientStatus = Enums.ClientStatus.Active,

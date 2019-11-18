@@ -18,7 +18,7 @@ namespace OAuthService.TenantFactory
 {
     public class TenantFactory : ITenantFactory
     {
-        private ConcurrentDictionary<string, DbContextOptionsBuilder<DbContext>> dbContextOptionsBuilders;
+        private ConcurrentDictionary<string, DbContextOptionsBuilder<DbContextDefault>> dbContextOptionsBuilders;
 
         private readonly IDistributedCacheService _distributedCache;
 
@@ -37,7 +37,7 @@ namespace OAuthService.TenantFactory
 
             _configuration = configuration;
 
-            dbContextOptionsBuilders = new ConcurrentDictionary<string, DbContextOptionsBuilder<DbContext>>();
+            dbContextOptionsBuilders = new ConcurrentDictionary<string, DbContextOptionsBuilder<DbContextDefault>>();
 
             _tenantConfig = tenantConfig.Value;
 
@@ -59,14 +59,14 @@ namespace OAuthService.TenantFactory
             }
             catch
             {
-                return await GetTenantByHtppAsync(id);
+                return await GetTenantByHttpAsync(id);
             }
 
         }
 
-        public T GetTenantContext<T>(string id) where T : DbContext
+        public T GetTenantContext<T>(string id) where T : DbContextDefault
         {
-            DbContextOptionsBuilder<DbContext> options;
+            DbContextOptionsBuilder<DbContextDefault> options;
 
             if (!dbContextOptionsBuilders.TryGetValue(id, out options))
             {
@@ -74,9 +74,9 @@ namespace OAuthService.TenantFactory
 
                 if (tenant == null) throw new BadRequestException($"Not found tenantId {id}");
 
-                options = new DbContextOptionsBuilder<DbContext>();
+                options = new DbContextOptionsBuilder<DbContextDefault>();
 
-                options.UseSqlServer(tenant.GetSqlConnectionString(_configuration.GetConnectionString("WebcastConnectionString")));
+                options.UseSqlServer(tenant.GetSqlConnectionString(_configuration.GetConnectionString("ConnectionString")));
 
                 dbContextOptionsBuilders.TryAdd(id, options);
             }
@@ -176,7 +176,7 @@ namespace OAuthService.TenantFactory
             }
         }
 
-        private async Task<TenantProfileModel> GetTenantByHtppAsync(string tenantId)
+        private async Task<TenantProfileModel> GetTenantByHttpAsync(string tenantId)
         {
             using (var client = new HttpClient())
             {
