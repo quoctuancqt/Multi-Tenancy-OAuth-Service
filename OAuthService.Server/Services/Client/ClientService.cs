@@ -87,7 +87,7 @@ namespace OAuthService.Server.Services
 
             AddClientConfiguration(entity);
 
-            var user = new User { UserName = $"{dto.SubDomain}@{_tenantConfig.Domain}" };
+            var user = new User { UserName = $"{dto.SubDomain}@{clientId}" };
 
             user.PasswordHash = _passwordHasher.HashPassword(user, "Admin@1234");
 
@@ -122,7 +122,7 @@ namespace OAuthService.Server.Services
 
             AddClientConfiguration(entity);
 
-            var user = await _user.SingleOrDefaultAsync(x => x.UserName.Equals($"{entity.SubDomain}@tiagamma.com"));
+            var user = await _user.SingleOrDefaultAsync(x => x.UserName.Equals($"{entity.SubDomain}@{entity.ClientId}"));
 
             var strategy = _context.Database.CreateExecutionStrategy();
 
